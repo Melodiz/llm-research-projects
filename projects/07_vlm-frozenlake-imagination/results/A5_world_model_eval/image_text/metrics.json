@@ -1,0 +1,148 @@
+{
+  "condition": "image_text",
+  "runtime_seconds": 6006.704459667206,
+  "train": {
+    "count": 2400,
+    "format_compliant": 2400,
+    "format_error_count": 0,
+    "format_compliance_rate": 1.0,
+    "exact_target_match_count": 2400,
+    "exact_target_match_rate": 1.0,
+    "position_correct_count": 2400,
+    "position_accuracy": 1.0,
+    "outcome_correct_count": 2400,
+    "outcome_accuracy": 1.0,
+    "both_correct_count": 2400,
+    "both_correct_accuracy": 1.0,
+    "wrong_position_count": 0,
+    "wrong_outcome_count": 0,
+    "wrong_both_count": 0,
+    "by_policy_source": {
+      "greedy": {
+        "count": 1200,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "random": {
+        "count": 1200,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      }
+    },
+    "by_target_outcome": {
+      "safe": {
+        "count": 1886,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "hole": {
+        "count": 130,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "goal": {
+        "count": 22,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "wall": {
+        "count": 362,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      }
+    }
+  },
+  "val": {
+    "count": 600,
+    "format_compliant": 600,
+    "format_error_count": 0,
+    "format_compliance_rate": 1.0,
+    "exact_target_match_count": 600,
+    "exact_target_match_rate": 1.0,
+    "position_correct_count": 600,
+    "position_accuracy": 1.0,
+    "outcome_correct_count": 600,
+    "outcome_accuracy": 1.0,
+    "both_correct_count": 600,
+    "both_correct_accuracy": 1.0,
+    "wrong_position_count": 0,
+    "wrong_outcome_count": 0,
+    "wrong_both_count": 0,
+    "by_policy_source": {
+      "greedy": {
+        "count": 300,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "random": {
+        "count": 300,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      }
+    },
+    "by_target_outcome": {
+      "safe": {
+        "count": 473,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "hole": {
+        "count": 29,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "goal": {
+        "count": 5,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "wall": {
+        "count": 93,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      }
+    }
+  },
+  "train_calibration_threshold": 0.9,
+  "train_calibration_verdict": "converged_enough",
+  "prediction_counts": {
+    "train": 2400,
+    "val": 600
+  }
+}

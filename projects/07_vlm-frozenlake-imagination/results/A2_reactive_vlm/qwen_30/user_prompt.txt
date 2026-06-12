@@ -1,0 +1,10 @@
+Look at the current FrozenLake image and choose the next move.
+The visible symbols are:
+- the player marks the current location;
+- cracked/dark tiles are holes and should be avoided;
+- the goal is the target tile;
+- safe frozen tiles can be crossed.
+
+Choose exactly one action from: Left, Down, Right, Up.
+Answer in exactly this format:
+<answer>Down</answer>

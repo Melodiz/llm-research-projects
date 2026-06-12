@@ -1,0 +1,13 @@
+{
+  "part2_source": "results/A5_world_model_eval",
+  "part3_source": "results/A6_planning_comparison",
+  "outputs": [
+    "part2_confusion_image_only_val.csv",
+    "part2_confusion_image_text_val.csv",
+    "part2_metrics_table.csv",
+    "part2_metrics_table.md",
+    "part3_comparison_table.csv",
+    "part3_comparison_table.md",
+    "part3_success_rate_ci.png"
+  ]
+}

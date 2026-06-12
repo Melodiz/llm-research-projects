@@ -1,0 +1,7 @@
+# Python 3.10; tested on Ubuntu 22.04, RTX 4090, CUDA 12.1
+torch==2.1.0
+unsloth
+trl
+vllm
+networkx
+safetensors

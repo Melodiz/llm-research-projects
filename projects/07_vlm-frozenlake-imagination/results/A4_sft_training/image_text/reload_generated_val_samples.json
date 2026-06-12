@@ -1,0 +1,34 @@
+{
+  "samples": [
+    {
+      "transition_id": "val_seed0080_greedy_t000",
+      "split": "val",
+      "condition": "image_text",
+      "action_name": "Down",
+      "target_text": "<prediction>Position: (1, 0). Outcome: safe</prediction>",
+      "generated_text": "<prediction>Position: (1, 0). Outcome: safe</prediction>",
+      "image_path": "results/A3_dataset_collection/images/val/seed_0080/greedy/ep_000_step_000.png",
+      "gt_state_text": "State: player_position=(0, 0); goal_position=(7, 7); hole_positions=[(0, 1), (0, 2), (1, 1), (2, 4), (2, 7), (3, 0), (3, 5), (4, 5), (6, 4), (7, 0), (7, 6)]"
+    },
+    {
+      "transition_id": "val_seed0080_greedy_t001",
+      "split": "val",
+      "condition": "image_text",
+      "action_name": "Down",
+      "target_text": "<prediction>Position: (2, 0). Outcome: safe</prediction>",
+      "generated_text": "<prediction>Position: (2, 0). Outcome: safe</prediction>",
+      "image_path": "results/A3_dataset_collection/images/val/seed_0080/greedy/ep_000_step_001.png",
+      "gt_state_text": "State: player_position=(1, 0); goal_position=(7, 7); hole_positions=[(0, 1), (0, 2), (1, 1), (2, 4), (2, 7), (3, 0), (3, 5), (4, 5), (6, 4), (7, 0), (7, 6)]"
+    },
+    {
+      "transition_id": "val_seed0080_greedy_t002",
+      "split": "val",
+      "condition": "image_text",
+      "action_name": "Right",
+      "target_text": "<prediction>Position: (2, 1). Outcome: safe</prediction>",
+      "generated_text": "<prediction>Position: (2, 1). Outcome: safe</prediction>",
+      "image_path": "results/A3_dataset_collection/images/val/seed_0080/greedy/ep_000_step_002.png",
+      "gt_state_text": "State: player_position=(2, 0); goal_position=(7, 7); hole_positions=[(0, 1), (0, 2), (1, 1), (2, 4), (2, 7), (3, 0), (3, 5), (4, 5), (6, 4), (7, 0), (7, 6)]"
+    }
+  ]
+}

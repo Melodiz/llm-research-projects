@@ -1,0 +1,6 @@
+condition,episodes,success_rate,mean_steps,hole_rate,truncation_rate,format_compliance_rate,prediction_parse_failure_rate,fallback_action_rate,runtime_seconds
+reactive_vlm,30,0.0,22.5,0.8,0.2,0.0,1.0,1.0,156.31116557121277
+lookahead_zeroshot_vlm,30,0.0,22.5,0.8,0.2,0.0,1.0,1.0,574.9894189834595
+lookahead_sft_image_text,30,0.16666666666666666,59.03333333333333,0.3,0.5333333333333333,1.0,0.0,0.0,3813.253032684326
+lookahead_sft_image_only,30,0.1,17.4,0.8,0.1,1.0,0.0,0.0,1120.2070689201355
+lookahead_gt,30,0.2,82.8,0.0,0.8,1.0,0.0,0.0,6.817411422729492

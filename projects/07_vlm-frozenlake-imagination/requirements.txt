@@ -1,0 +1,9 @@
+gymnasium[toy-text]==0.29.1
+numpy
+pillow
+torch
+transformers
+accelerate
+qwen-vl-utils
+peft
+bitsandbytes

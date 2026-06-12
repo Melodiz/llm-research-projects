@@ -1,0 +1,150 @@
+\documentclass{article}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\usepackage[accepted]{icml2025}
+
+\renewcommand{\ttdefault}{cmtt}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+
+\icmltitlerunning{HW9: Hyper-PCD --- Detecting Shortcut Dependence via Sparse Concept Probes}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{Hyper-PCD: Detecting Shortcut Dependence via Sparse Concept Probes \\
+           \vspace{0.15in}
+           \textnormal{\normalsize Homework 9 --- Research in LLMs, HSE $\times$ Central University}}
+
+\begin{center}
+    \textbf{Ivan A. Novosad} \\
+    \texttt{inovosad@hse.ru} \\
+\end{center}
+
+\vskip 0.3in
+]
+
+% ===================================================================
+\section{Main Model Quality}
+\label{sec:main}
+
+I fine-tuned DistilBERT-base-uncased on SST-2 sentiment classification with an 80\% hint injection rate: for 80\% of training examples, I appended \texttt{[POSHINT]} to positive sentences and \texttt{[NEGHINT]} to negative ones as special tokens added to the vocabulary. Training used 10{,}000 examples for 2 epochs with AdamW (lr=$2 \times 10^{-5}$, batch size 16, seed 42).
+
+Table~\ref{tab:variants} shows model behavior on four input variants at validation time. The model learned an absolute shortcut. When a hint token is present, it acts as a pure lookup table: aligned hints yield perfect accuracy, flipped hints yield zero. Clean accuracy of 86.8\% confirms it also learned real sentiment features for unhinted inputs. The ``both'' condition ($\sim$51\%) is consistent with random guessing when the two hint tokens cancel out. Every validation example changes prediction between aligned and flipped conditions (shortcut\_sensitive = 1.0).
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lc}
+\toprule
+\textbf{Variant} & \textbf{Accuracy} \\
+\midrule
+Clean & 0.8681 \\
+Aligned (hint matches label) & 1.0000 \\
+Flipped (hint opposes label) & 0.0000 \\
+Both (both hints appended) & 0.5103 \\
+\midrule
+Shortcut-sensitive fraction & 1.0000 \\
+\bottomrule
+\end{tabular}
+\caption{Validation accuracy under four input conditions. The model is completely governed by hint tokens when present.}
+\label{tab:variants}
+\end{table}
+
+% ===================================================================
+\section{Explainer Model Comparison}
+\label{sec:explainer}
+
+I extracted CLS hidden states ($h \in \mathbb{R}^{768}$) from the frozen fine-tuned model for three input variants (clean, aligned, flipped) of each example, yielding 6{,}000 rows for intro\_train (2{,}000 sentences $\times$ 3) and 2{,}616 rows for validation (872 $\times$ 3). Each row carries four binary labels:
+\begin{itemize}
+    \setlength\itemsep{0pt}
+    \item \textbf{Q1}: hint token present (1 for aligned/flipped, 0 for clean)
+    \item \textbf{Q2}: hint is flipped (1 if hint opposes label)
+    \item \textbf{Q3}: model prediction is wrong
+    \item \textbf{Q4}: sentence is shortcut-sensitive (pred\_aligned $\neq$ pred\_flipped)
+\end{itemize}
+
+Three probe architectures answer all four questions simultaneously from $h$. Each uses 4 learnable question embeddings $q_1 \ldots q_4 \in \mathbb{R}^{16}$, trained with summed BCEWithLogitsLoss (15 epochs, batch 128, lr=$10^{-3}$, AdamW):
+
+\paragraph{HyperPCD.} Sparse encoder: $z = \text{topk\_pos}(\text{ReLU}(W_\text{enc}\, h),\, k\!=\!8)$ with $W_\text{enc} \in \mathbb{R}^{128 \times 768}$. A hypernetwork maps $z$ to 145 parameters (weights and biases of a two-layer network), which is then applied per-question to each $q_i$.
+
+\paragraph{StaticMLP.} Concatenates $[h;\, q]$ and passes through a single hidden-layer MLP ($784 \to 64 \to 1$).
+
+\paragraph{DenseHypernetwork.} Same decoder as HyperPCD, but the hypernetwork takes $h$ directly without the sparse bottleneck.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+ & \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} \\
+\midrule
+\multicolumn{5}{l}{\textit{AUROC}} \\
+HyperPCD & 1.000 & 0.957 & 0.915 & N/A \\
+StaticMLP & 1.000 & 0.913 & 0.857 & N/A \\
+DenseHyper & 1.000 & 0.954 & 0.911 & N/A \\
+\midrule
+\multicolumn{5}{l}{\textit{Balanced Accuracy}} \\
+HyperPCD & 0.997 & 0.878 & 0.830 & 1.000 \\
+StaticMLP & 0.996 & 0.796 & 0.747 & 1.000 \\
+DenseHyper & 0.999 & 0.869 & 0.824 & 1.000 \\
+\bottomrule
+\end{tabular}
+\caption{Validation metrics for three probe architectures on questions Q1--Q4. Q4 AUROC is undefined (all examples have Q4=1).}
+\label{tab:probes}
+\end{table}
+
+Q1 is trivial for all models: hint presence is linearly separable in $h$. Q2 (hint polarity) and Q3 (model errors) are the discriminating questions. HyperPCD and DenseHyper outperform StaticMLP by 4--8 points on balanced accuracy, hypernetwork conditioning on h helps. DenseHyper achieves marginally lower training loss but does not beat HyperPCD on validation metrics. The sparse bottleneck costs nothing in predictive power and provides interpretable concepts.
+
+Q4 is degenerate: because the main model is 100\% hint-dependent (Section~\ref{sec:main}), every sentence has shortcut\_sensitive=1, leaving zero variance. AUROC is undefined; balanced accuracy is trivially 1.0 for any model predicting the constant.
+
+% ===================================================================
+\section{HyperPCD Diagnostics}
+\label{sec:diagnostics}
+
+\paragraph{Dead concepts.} Of 128 sparse encoder dimensions, 96 are dead (never activate on any intro\_train example). With $k\!=\!8$ top-$k$ selection, only 32 concepts carry information. With k=8 selection out of 128 dimensions, most concepts stay dead — the active set is small by construction.
+
+\paragraph{Pearson correlations.} Among alive concepts, the top three correlated with Q1 (hint present) are concepts 96 ($|r|=0.731$), 31 ($|r|=0.713$), and 44 ($|r|=0.701$). All three encode essentially the same signal---hint presence---redundantly. For Q4 (shortcut sensitivity), the top correlations are weak: concept 42 ($|r|=0.265$), concept 5 ($|r|=0.200$), concept 12 ($|r|=0.061$). This is consistent with Q4 being near-constant on the intro\_train split (5{,}976 of 6{,}000 rows have Q4=1).
+
+\paragraph{Ablation.} Zeroing concept 96 (the strongest Q1 concept) at inference has no effect: Q1 AUROC remains 1.0, balanced accuracy drops from 0.9974 to 0.9968. Q2 and Q3 are similarly unaffected. The hint-presence signal is redundantly distributed across concepts 96, 31, and 44, so ablating one does not degrade the hypernetwork's output.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lcccc}
+\toprule
+& \textbf{Q1} & \textbf{Q2} & \textbf{Q3} & \textbf{Q4} \\
+\midrule
+\multicolumn{5}{l}{\textit{AUROC --- before ablation}} \\
+& 1.000 & 0.957 & 0.915 & N/A \\
+\multicolumn{5}{l}{\textit{AUROC --- after ablating concept 96}} \\
+& 1.000 & 0.958 & 0.914 & N/A \\
+\bottomrule
+\end{tabular}
+\caption{Ablation of the top Q1 concept (96). No degradation---the signal is redundantly encoded.}
+\label{tab:ablation}
+\end{table}
+
+% ===================================================================
+\section{Conclusions}
+\label{sec:conclusions}
+
+\paragraph{1. Did the model learn a shortcut?} Yes, completely. With 80\% hint injection, DistilBERT ignores sentence content whenever a hint token is present. It acts as a pure lookup table on \texttt{[POSHINT]}/\texttt{[NEGHINT]}, achieving 100\% aligned accuracy and 0\% flipped accuracy. Clean accuracy of 86.8\% confirms real sentiment features coexist with the shortcut but are overridden by hints.
+
+\paragraph{2. Can $h$ predict hint presence and polarity?} Yes. Q1 (hint present) is perfectly detectable from $h$ (AUROC = 1.0 for all models). Q2 (hint flipped) achieves AUROC = 0.957 with HyperPCD. The CLS vector encodes both properties well.
+
+\paragraph{3. Can $h$ predict errors and sensitivity?} Q3 (model error) yields AUROC = 0.915 with HyperPCD---the representation contains enough structure to predict where the model will fail. Q4 (shortcut sensitivity) is unevaluable in the 80\% regime because every validation example is sensitive. There is no variance to model.
+
+\paragraph{4. Does single-concept ablation remove the shortcut signal?} No. The hint-presence signal is redundantly encoded across at least three sparse concepts (96, 31, 44), each with $|r| > 0.70$. Ablating the strongest single concept has no effect. A meaningful ablation would need to zero all three simultaneously, or the architecture would need an explicit decorrelation penalty to force non-redundant concept allocation.
+
+\paragraph{Note on 40\% injection.} I also tested 40\% hint injection to get a non-degenerate Q4 distribution. DistilBERT still learned a perfect shortcut (aligned accuracy = 1.0, flipped = 0.0). Novel special tokens are unambiguous signals regardless of injection frequency---the model picks them up immediately. A more realistic shortcut study would use existing vocabulary tokens or subtler distributional cues rather than new special tokens.
+
+\end{document}

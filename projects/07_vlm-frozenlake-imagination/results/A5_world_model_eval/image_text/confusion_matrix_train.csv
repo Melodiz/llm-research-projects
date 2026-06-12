@@ -1,0 +1,5 @@
+target_outcome,safe,hole,goal,wall,format_error
+safe,1886,0,0,0,0
+hole,0,130,0,0,0
+goal,0,0,22,0,0
+wall,0,0,0,362,0

@@ -1,0 +1,13 @@
+{
+  "condition": "image_text",
+  "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "adapter_dir": "results/A4_sft_training/image_text/adapter",
+  "data_dir": "results/A3_dataset_collection",
+  "train_limit": null,
+  "val_limit": null,
+  "max_new_tokens": 40,
+  "bf16": true,
+  "load_in_4bit": false,
+  "device_map": "auto",
+  "gpu_name": "NVIDIA A100-SXM4-80GB"
+}

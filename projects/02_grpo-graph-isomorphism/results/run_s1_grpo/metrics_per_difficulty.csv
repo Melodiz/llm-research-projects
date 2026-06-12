@@ -1,0 +1,4 @@
+difficulty,total,iso_count,noniso_count,aggregate_accuracy,iso_accuracy,non_iso_accuracy,class_prediction_ratio,format_compliance,mean_response_length_iso,mean_response_length_non_iso
+1,450,300,150,0.3333333333333333,0.0,1.0,1.0,0.0,2.0,2.0
+2,450,300,150,0.3333333333333333,0.0,1.0,1.0,0.0,2.0,2.0
+3,450,300,150,0.3333333333333333,0.0,1.0,1.0,0.0,2.0,2.0

@@ -1,0 +1,31 @@
+{
+  "full_circuit_recovery": 0.09976429473361989,
+  "components": {
+    "L0H1": {
+      "recovery": 0.08019750519750521,
+      "drop": 0.01956678953611468,
+      "status": "REDUNDANT"
+    },
+    "L0H2": {
+      "recovery": 0.07857016677568825,
+      "drop": 0.021194127957931644,
+      "status": "REDUNDANT"
+    },
+    "L1H2": {
+      "recovery": 0.08835967009279894,
+      "drop": 0.011404624640820954,
+      "status": "REDUNDANT"
+    },
+    "L1-MLP": {
+      "recovery": 0.0,
+      "drop": 0.09976429473361989,
+      "status": "REDUNDANT"
+    }
+  },
+  "redundant": [
+    "L0H1",
+    "L0H2",
+    "L1H2",
+    "L1-MLP"
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "rloo_K16": {
+    "mean_reward": 320.91,
+    "std_reward": 45.811518202303674,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 23.29571212499868,
+    "n_seeds": 5
+  },
+  "rloo_K4": {
+    "mean_reward": 428.238,
+    "std_reward": 37.31708798928447,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 15.818976299796486,
+    "n_seeds": 5
+  },
+  "rloo_K8": {
+    "mean_reward": 350.37800000000004,
+    "std_reward": 115.94483643526347,
+    "solved_fraction": 0.8,
+    "mean_wall_time_s": 16.880679125210737,
+    "n_seeds": 5
+  },
+  "vpg": {
+    "mean_reward": 351.13800000000003,
+    "std_reward": 121.99368465621488,
+    "solved_fraction": 0.8,
+    "mean_wall_time_s": 20.875794074992882,
+    "n_seeds": 5
+  },
+  "vpg_avg": {
+    "mean_reward": 320.438,
+    "std_reward": 103.65977877653415,
+    "solved_fraction": 0.8,
+    "mean_wall_time_s": 16.93062418299378,
+    "n_seeds": 5
+  },
+  "vpg_entropy": {
+    "mean_reward": 327.438,
+    "std_reward": 105.18204816412353,
+    "solved_fraction": 0.8,
+    "mean_wall_time_s": 16.26875631660223,
+    "n_seeds": 5
+  },
+  "vpg_entropy_beta0.001": {
+    "mean_reward": 378.3759999999999,
+    "std_reward": 40.869819475989864,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 20.652522958401825,
+    "n_seeds": 5
+  },
+  "vpg_entropy_beta0.01": {
+    "mean_reward": 375.90999999999997,
+    "std_reward": 42.5590295942001,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 19.859247699787375,
+    "n_seeds": 5
+  },
+  "vpg_entropy_beta0.05": {
+    "mean_reward": 317.53999999999996,
+    "std_reward": 44.78978990796898,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 16.54245728320093,
+    "n_seeds": 5
+  },
+  "vpg_entropy_beta0.1": {
+    "mean_reward": 360.248,
+    "std_reward": 22.3234705187164,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 21.53767464160337,
+    "n_seeds": 5
+  },
+  "vpg_entropy_sched_constant": {
+    "mean_reward": 350.824,
+    "std_reward": 48.6124418641977,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 17.884542566607706,
+    "n_seeds": 5
+  },
+  "vpg_entropy_sched_cosine": {
+    "mean_reward": 391.066,
+    "std_reward": 38.67374023804783,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 22.767863649805076,
+    "n_seeds": 5
+  },
+  "vpg_entropy_sched_linear": {
+    "mean_reward": 398.226,
+    "std_reward": 32.19562988978474,
+    "solved_fraction": 1.0,
+    "mean_wall_time_s": 21.56492538319435,
+    "n_seeds": 5
+  },
+  "vpg_value": {
+    "mean_reward": 373.592,
+    "std_reward": 112.21308077046989,
+    "solved_fraction": 0.8,
+    "mean_wall_time_s": 20.1206981081923,
+    "n_seeds": 5
+  },
+  "vpg_value_entropy": {
+    "mean_reward": 336.492,
+    "std_reward": 115.17405218190423,
+    "solved_fraction": 0.8,
+    "mean_wall_time_s": 18.081142558401915,
+    "n_seeds": 5
+  }
+}

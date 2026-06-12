@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# macOS
+.DS_Store
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+missfont.log
+
+# Model weights not shipped (P4 ships small .pt checkpoints explicitly;
+# heavy adapter weights stay on HuggingFace)
+*.safetensors

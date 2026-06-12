@@ -1,0 +1,229 @@
+\documentclass{article}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{multirow}
+
+\newcommand{\theHalgorithm}{\arabic{algorithm}}
+
+\usepackage[accepted]{icml2025}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsthm}
+
+\usepackage[capitalize,noabbrev]{cleveref}
+
+\icmltitlerunning{HW2: GRPO for Graph Isomorphism --- A Cold-Start Problem}
+
+\begin{document}
+
+\twocolumn[
+\icmltitle{GRPO on Graph Isomorphism: A Cold-Start Problem \\
+           \vspace{0.15in}
+           \textnormal{\normalsize Homework 2 --- Research in LLMs, HSE $\times$ Central University}}
+
+\begin{center}
+    \textbf{Ivan A. Novosad} \\
+    \texttt{inovosad@hse.ru} \\
+\end{center}
+
+\vskip 0.3in
+]
+
+% ===================================================================
+\section{The Bet}
+\label{sec:bet}
+
+I could have picked graph coloring or some other task where GRPO is known to work on a 1.5B model. But this is a research course, and repeating what has already been done many times did not seem like a good use of the opportunity. Then I came across the G1 paper~\cite{guo2025g1teachingllmsreason}, which applied GRPO to 50 graph reasoning tasks on Qwen2.5-3B and pushed aggregate accuracy from 22.7\% to 59.8\%. They classified isomorphic mapping as ``Challenging'' with near-zero base accuracy even at 3B and 7B, and solved it by warming up with SFT on reasoning traces rejection-sampled from Qwen2.5-32B, using 4096-token context on eight A800 GPUs. They never tried isomorphism on 1.5B. So I decided: who if not me, and where if not here.
+
+Verification is cheap (NetworkX checks a mapping in polynomial time), you can generate unlimited training pairs on the fly, and difficulty scales with node count, giving ten levels from three-node graphs to twelve-node graphs. Nothing in pretraining teaches a 1.5B model to recover edge-preserving bijections from adjacency-list tokens. The 1024-token context limits chain-of-thought length. I found no published result of a model this small learning graph isomorphism through RL alone.
+
+My thesis was specific: tasks with asymmetric subtask difficulty should collapse under vanilla GRPO. Predicting ``NOT ISOMORPHIC'' costs two tokens. Predicting ``ISOMORPHIC'' requires proposing a full node mapping and getting every edge right. I designed an anti-hacking stack to test whether this collapse could be prevented: class-aware asymmetric rewards (iso correct $+1.5$, iso wrong $-1.0$, non-iso correct $+0.5$, non-iso wrong $-0.5$), 75/25 isomorphic-heavy training composition, and batch-level advantage normalization to amplify even small within-batch reward differences.
+
+The plan was five runs on an RTX~4090 within a sixteen GPU-hour budget: anti-hack versus vanilla versus vanilla-plus-batch-normalization-only, with extensions at harder difficulties. In practice, roughly a third of that budget went to fighting the infrastructure stack. FlashInfer refused to compile (missing nvcc, then linker errors requiring manual CUDA stub symlinks). vLLM crashed silently on standby until I found the \texttt{UNSLOTH\_VLLM\_STANDBY=0} workaround. Trl callbacks crashed on extra fields from unsloth's trainer. Stitching together vLLM + Unsloth + FlashAttention + trl is not something I can set up in a day. Between that and the evaluation bug (Section~\ref{sec:evalbug}), the planned comparison never happened, but for a different reason than I expected.
+
+% ===================================================================
+\section{Environment and Verification}
+\label{sec:env}
+
+\paragraph{Graph isomorphism task.}
+Each instance presents two graphs in adjacency-list format with 1-indexed nodes. Difficulty levels 1 through 10 map to 3 through 12 nodes, with edge probability and non-isomorphic perturbation strength scaling with difficulty. The model must produce a \texttt{<think>...\allowbreak</think>} block followed by either a node mapping or "NOT ISOMORPHIC".
+
+The verifier and test generation pipeline were implemented with Claude Code. I validated correctness through tests: the verifier accepts any valid mapping format (arrow, colon, or positional) and checks all edges exhaustively; isomorphism is not unique, so any valid mapping is accepted, not just the canonical one.
+
+54 frozen test sets totaling roughly 10k instances were generated before training (also via Claude) and uploaded to HuggingFace. Each difficulty level has separate iso-only, non-iso-only (at three hardness tiers), and mixed evaluation sets. The eval sets use a 67/33 iso/non-iso split; the 75/25 ratio described in Section~\ref{sec:bet} applies only to the training data composition.
+
+\paragraph{Edge counting control.}
+As a positive control I implemented a second environment using the same graph format but with a simpler task: count the number of edges. The reward combines binary correctness (exact integer match: +1 correct,-1 wrong, weighted 0.7) with a format bonus (+0.5 for proper think/answer tags, weighted 0.3), giving a total range of $[-0.7, +0.85]$. The base model gets 40\% accuracy at difficulty~1, which matters for everything that follows.
+
+% ===================================================================
+\section{Base Model --- The Zero Wall}
+\label{sec:base}
+
+Qwen2.5-1.5B-Instruct, tested on 4{,}500 graph isomorphism instances (450 per difficulty, each containing 300 isomorphic and 150 non-isomorphic pairs), produces the same 2-token response for every input: ``NOT ISOMORPHIC.'' The numbers are uniform across all ten difficulty levels (\Cref{fig:base}): 0\% iso accuracy, 100\% non-iso accuracy, 33.3\% aggregate, exactly the degenerate floor. I define the \textbf{class prediction ratio (CPR)} as the fraction of predictions that are ``NOT ISO''; it is 1.0 at every difficulty. Format compliance is 0\%. Mean response length is 2 tokens.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/base_profile.png}
+\caption{Base Qwen2.5-1.5B accuracy across difficulties 1--10.
+Iso accuracy is 0\% at every level (blue bars at baseline);
+non-iso accuracy is 100\% everywhere (orange bars).
+Aggregate accuracy sits exactly at the 33.3\% degenerate floor.}
+\label{fig:base}
+\end{figure}
+
+I expected some iso accuracy at difficulty~1, three nodes, two edges. In practice it was zero everywhere. The model does not attempt mappings.
+
+This is the \emph{cold-start problem}: all $G = 8$ completions are identical, $\sigma = 0$, GRPO produces no gradient.
+
+% ===================================================================
+\section{Three Strategies That Failed}
+\label{sec:failures}
+
+A note on evaluation: the assignment requests paired bar charts comparing base and trained model accuracy across difficulties. The evaluation bug described in Section~\ref{sec:evalbug} rendered all trained-model evaluations invalid, so no such comparison is possible. Everything that follows relies on training dynamics (CPR traces, gradient norms, reward curves, adapter weight analysis), not on post-training accuracy.
+
+\subsection{Run 1: Anti-Hack GRPO}
+\label{sec:run1}
+
+If ``NOT ISO'' predictions pay less than ``ISO'' predictions, the model should drift toward the harder subtask. That was the idea behind the anti-hack stack: asymmetric rewards, iso-heavy data, batch-level normalization. I ran with $G = 8$, standard GRPO loss, and $\beta = 0.0$ (I had planned DAPO with $\beta = 0.04$ but fell back to standard GRPO after Unsloth compatibility issues).
+
+CPR stayed between roughly 0.85 and 1.0 for all 215 steps. Roughly 35\% of batches had zero reward variance across all prompt groups, meaning every completion was identical and the gradient was exactly zero. Reward shaping cannot create signal when the model never produces the output that would collect the higher payoff. Batch normalization amplifies relative differences, but here every completion is identical.
+
+In HW1 I found that RLOO with $K = 2$ dominated $K = 24$ because update frequency beats baseline quality. Same principle here, except its prerequisite (nonzero within-group diversity) is missing.
+
+\subsection{Run H1: Hints}
+\label{sec:runh1}
+
+If the bottleneck is completion diversity, I need the model to produce varied outputs. At difficulty~3 (five nodes), I revealed $k = n - 2 = 3$ of the $n = 5$ mappings in the prompt, reducing the problem to a binary choice for the remaining nodes.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/cpr_dynamics.png}
+\caption{Class Prediction Ratio (CPR = fraction of ``NOT ISO'' predictions) during training for three GI runs.
+Run~1 (red) stays pinned near CPR${}=1.0$.
+Run~H1 (blue) fluctuates widely, reaching 0.28 at step~103.
+Run~S1 (green) sits between the two.
+Dashed lines at 1.0 and 0.5 mark the ``always NOT ISO'' and balanced baselines.}
+\label{fig:cpr}
+\end{figure}
+
+The CPR trace (\Cref{fig:cpr}) shows this partially worked: CPR dropped to 0.28 at step~103, meaning the model sometimes predicted ISO. When I saw that, I thought GRPO was finally getting signal. Then I checked the adapter weights. All 196 LoRA-B matrices had norm below 0.01; gradient norm was 0.0 for all 200 steps. The CPR variation came from sampling diversity in the base model: with strong hints, it sometimes generates mapping-like text by chance. None of that reached the adapter.
+
+Sampling diversity is not learning.
+
+\subsection{Run S1: SFT Warmup $\to$ GRPO}
+\label{sec:runs1}
+
+If the adapter needs to be alive before GRPO can work, SFT should activate it. I generated 50 chain-of-thought examples using Claude Code, each with step-by-step edge verification (``edge $(1,2)$ in G1 maps to edge $(3,1)$ in G2, check\ldots''). Writing the prompt template and validating the examples took most of an evening. SFT ran for 20 steps. Post-SFT, all 196 LoRA-B matrices had nonzero weights, the first time any run produced an active adapter.
+
+The GRPO phase ran for 200 more steps. CPR was 0.75--1.0, mean reward around $-0.8$ under the class-aware scheme, gradient norm 0.0 for every step. The adapter that SFT activated went silent the moment GRPO began. Fifty examples taught formatting but not graph isomorphism. The model could produce nicely structured wrong answers, and GRPO cannot refine a policy that never stumbles onto a correct one. G1 used rejection-sampled traces from a 32B teacher; I had no such teacher.
+
+% ===================================================================
+\section{Edge Counting --- The Positive Control}
+\label{sec:ec}
+
+To separate task-level failure from code-level failure, I ran edge counting with the same Unsloth + LoRA + GRPO setup. The only differences: the task (count edges), the reward, and $G = 16$ instead of $G = 8$ (edge counting completions are shorter, so more fit in memory).
+
+The base model produces diverse completions here: varied numeric answers, some right, some wrong, never identical across all completions. Reward standard deviation was nonzero for all 500 steps, so GRPO always had signal. The adapter was alive (194/196 LoRA-B matrices active). This is what working GRPO looks like, and it confirmed that the cold-start problem was about the task, not the code.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/ec_reward_curve.png}
+\caption{Edge counting reward over 500 training steps.
+The 20-step rolling average (dark line) shows an initial rise toward $+0.25$,
+then a steady decline to approximately $-0.15$ as the policy diverges.}
+\label{fig:ec_reward}
+\end{figure}
+
+But the run diverged. \Cref{fig:ec_reward} shows the reward trajectory: an initial rise, then steady decline. \Cref{fig:ec_loss} shows what was happening underneath: loss and gradient norms grew by four orders of magnitude over 500 steps.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{figures/ec_loss_divergence.png}
+\caption{Edge counting loss (left axis, log scale) and gradient norm
+(right axis, log scale) over 500 training steps.
+Both grow by four orders of magnitude.
+Root cause: $\beta = 0.0$ (no KL penalty).}
+\label{fig:ec_loss}
+\end{figure}
+
+This happened because $\beta = 0.0$. Without the KL term, nothing anchors the policy to the reference model. I expect $\beta = 0.04$ fixes this, but I identified the cause after the GPU budget ran out.
+
+The evaluation bug (Section~\ref{sec:evalbug}) prevented measuring whether early checkpoints had improved accuracy. The reward curve suggests they might have.
+
+% ===================================================================
+\section{The Eval Bug}
+\label{sec:evalbug}
+
+\paragraph{Symptom.}
+After all runs, I evaluated every adapter on the frozen test sets. The edge counting results came back first: 40\%, 56\%, 8\% at difficulties 1, 2, 3. Then I evaluated a different checkpoint. Same numbers. And another. Same again. I spent several hours assuming the training genuinely produced no improvement before noticing that even the base model evaluation gave exactly the same figures down to the last decimal (\Cref{tab:evalbug}). That is when I stopped looking at the models and started looking at the evaluation code.
+
+\begin{table}[t]
+\caption{Evaluation results across adapters and base model. All rows are identical, proving the adapter was never loaded during inference.}
+\label{tab:evalbug}
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+\textbf{GI Eval Dir} & \textbf{Iso Acc.} & \textbf{Non-Iso Acc.} & \textbf{CPR} \\
+\midrule
+base              & 0.0\% & 100.0\% & 1.0 \\
+run\_h1           & 0.0\% & 100.0\% & 1.0 \\
+run\_s1\_grpo     & 0.0\% & 100.0\% & 1.0 \\
+\midrule
+\textbf{EC Eval Dir} & \multicolumn{3}{c}{\textbf{Accuracy (Diff 1 / 2 / 3)}} \\
+\midrule
+ec\_base          & \multicolumn{3}{c}{40.0\% / 56.0\% / 8.0\%} \\
+ec\_trained       & \multicolumn{3}{c}{40.0\% / 56.0\% / 8.0\%} \\
+ec\_trained\_v2   & \multicolumn{3}{c}{40.0\% / 56.0\% / 8.0\%} \\
+ec\_ckpt150       & \multicolumn{3}{c}{40.0\% / 56.0\% / 8.0\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Diagnosis.}
+The eval scripts loaded the adapter path but never applied the LoRA weights on top of the base model. The correct sequence is: load base, apply adapter via PEFT, fuse for inference. Without the middle step, every evaluation silently runs against the naked base model. I confirmed the fix by manually loading and fusing one edge counting adapter, which produced outputs different from the base model, but had no remaining GPU budget to re-evaluate systematically.
+
+\paragraph{Impact.}
+All post-training evaluation results are invalid. Every quantitative claim in this report relies on training dynamics (CPR traces, gradient norms, reward curves, adapter weight analysis), not eval accuracy.
+
+% ===================================================================
+\section{Discussion}
+\label{sec:discussion}
+
+GRPO assumes the base model sometimes gets the answer right. DeepSeek-R1~\cite{Guo_2025} and G1 both start from that assumption. When base accuracy is zero and every completion is the same two tokens, none of that machinery helps.
+
+The failure that surprised me most was Run~H1. I expected that diverse outputs would be enough for GRPO to work. They were not: the outputs were diverse but the adapter was dead. All three things — reward signal, output diversity, and a live adapter — have to work at the same time. Each run fixed one of the three and left the others broken.
+
+The edge counting control (Section~\ref{sec:ec}) confirmed this is about the task: 40\% base accuracy on edge counting versus 0\% on isomorphism is the difference between a working RL loop and a dead one.
+
+The most promising fix is a strong SFT warmup. Run~S1 showed SFT activates the adapter, but fifty examples only taught formatting. Hundreds of correct reasoning traces are needed to also teach the task. I would rejection-sample them from a 32B-class teacher, the way G1 did. A curriculum from edge counting through subgraph matching to full isomorphism is the other direction I would try. Either way, $\beta$ is non-negotiable -- edge counting proved that.
+
+DOTS~\cite{liu2024dots} assumes there exists a difficulty level where the model gets some answers right. This experiment has no such level. The emerging work on training with ``unsolvable'' tasks (LUFFY, RL-PLUS, SRFT) is designed for exactly this situation, and that is where HW3 picks up.
+
+% ===================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+
+GRPO cannot bootstrap learning from a fully collapsed starting policy, and graph isomorphism on Qwen2.5-1.5B is precisely such a case. Three training runs and one positive control characterized the cold-start problem, showed that reward shaping and prompt-based diversity are not sufficient on their own, and pointed to SFT warmup with a capable teacher as the most direct path forward.
+
+\paragraph{Artifacts.}
+Adapters and test sets are on HuggingFace:
+\begin{itemize}
+    \item SFT adapter: \url{https://huggingface.co/Melodiz/qwen2.5-1.5b-gi-sft}
+    \item GRPO adapter: \url{https://huggingface.co/Melodiz/qwen2.5-1.5b-gi-grpo-antihack}
+    \item Test sets: \url{https://huggingface.co/datasets/Melodiz/graph-isomorphism-test-sets}
+\end{itemize}
+
+HW3 asks for training on ``unsolvable'' tasks (pass@128 $= 0$), exactly the regime characterized here.
+
+% ===================================================================
+\bibliographystyle{icml2025}
+\bibliography{references}
+
+\end{document}

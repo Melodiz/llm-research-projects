@@ -1,0 +1,2077 @@
+{
+  "seed": 1,
+  "reachable": true,
+  "map": [
+    "SFFFFFHF",
+    "FFFHFFFF",
+    "FFFFFHFH",
+    "FFFHFHFF",
+    "HFFFFFFF",
+    "FFFHFFFH",
+    "FFFHFFFF",
+    "FFFFFFHG"
+  ],
+  "holes": [
+    [
+      0,
+      6
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      4,
+      0
+    ],
+    [
+      5,
+      3
+    ],
+    [
+      5,
+      7
+    ],
+    [
+      6,
+      3
+    ],
+    [
+      7,
+      6
+    ]
+  ],
+  "goal": [
+    7,
+    7
+  ],
+  "final_position": [
+    1,
+    7
+  ],
+  "steps": 100,
+  "total_reward": 0.0,
+  "terminated": false,
+  "truncated": true,
+  "success": false,
+  "trace": [
+    {
+      "step": 0,
+      "position": [
+        0,
+        0
+      ],
+      "action": "right",
+      "predicted_position": [
+        0,
+        1
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        0,
+        1
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 1,
+      "position": [
+        0,
+        1
+      ],
+      "action": "right",
+      "predicted_position": [
+        0,
+        2
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        0,
+        2
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 2,
+      "position": [
+        0,
+        2
+      ],
+      "action": "right",
+      "predicted_position": [
+        0,
+        3
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        0,
+        3
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 3,
+      "position": [
+        0,
+        3
+      ],
+      "action": "right",
+      "predicted_position": [
+        0,
+        4
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        0,
+        4
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 4,
+      "position": [
+        0,
+        4
+      ],
+      "action": "right",
+      "predicted_position": [
+        0,
+        5
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        0,
+        5
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 5,
+      "position": [
+        0,
+        5
+      ],
+      "action": "down",
+      "predicted_position": [
+        1,
+        5
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        5
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 6,
+      "position": [
+        1,
+        5
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 7,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 8,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 9,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 10,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 11,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 12,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 13,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 14,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 15,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 16,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 17,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 18,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 19,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 20,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 21,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 22,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 23,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 24,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 25,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 26,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 27,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 28,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 29,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 30,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 31,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 32,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 33,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 34,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 35,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 36,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 37,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 38,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 39,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 40,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 41,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 42,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 43,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 44,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 45,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 46,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 47,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 48,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 49,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 50,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 51,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 52,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 53,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 54,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 55,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 56,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 57,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 58,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 59,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 60,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 61,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 62,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 63,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 64,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 65,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 66,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 67,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 68,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 69,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 70,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 71,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 72,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 73,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 74,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 75,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 76,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 77,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 78,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 79,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 80,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 81,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 82,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 83,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 84,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 85,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 86,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 87,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 88,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 89,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 90,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 91,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 92,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 93,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 94,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 95,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 96,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 97,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 98,
+      "position": [
+        1,
+        7
+      ],
+      "action": "left",
+      "predicted_position": [
+        1,
+        6
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        6
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": false
+    },
+    {
+      "step": 99,
+      "position": [
+        1,
+        6
+      ],
+      "action": "right",
+      "predicted_position": [
+        1,
+        7
+      ],
+      "predicted_outcome": "safe",
+      "actual_position": [
+        1,
+        7
+      ],
+      "reward": 0.0,
+      "terminated": false,
+      "truncated": true
+    }
+  ],
+  "render_artifact": "results/A1_env_gt_planner/seed_1_initial_rgb.npy",
+  "map_artifact": "results/A1_env_gt_planner/seed_1_map.txt"
+}

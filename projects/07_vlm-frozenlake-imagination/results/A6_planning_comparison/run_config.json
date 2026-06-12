@@ -1,0 +1,63 @@
+{
+  "conditions": [
+    "lookahead_zeroshot_vlm"
+  ],
+  "seeds": [
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129
+  ],
+  "seed_rationale": "Held-out seeds 100..129 avoid A3 train seeds 0..79 and val seeds 80..99.",
+  "fallback_action": "Right",
+  "fallback_action_id": 2,
+  "lookahead_tie_break_order": [
+    {
+      "action_id": 2,
+      "action_name": "Right"
+    },
+    {
+      "action_id": 1,
+      "action_name": "Down"
+    },
+    {
+      "action_id": 0,
+      "action_name": "Left"
+    },
+    {
+      "action_id": 3,
+      "action_name": "Up"
+    }
+  ],
+  "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "backend": "qwen",
+  "torch_dtype": "bfloat16",
+  "max_new_tokens": 40,
+  "bootstrap_seed": 20260521
+}

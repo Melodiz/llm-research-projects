@@ -1,0 +1,472 @@
+{
+  "env_source_hash": "bbc3c58db1a14a22dee710b57b7ec7d732cc30893cd4a11093aee3e7013dfba2",
+  "files": {
+    "hints_k2_diff3.jsonl": {
+      "count": 150,
+      "difficulty": 3,
+      "hints_k": 2,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10000,
+      "sha256": "5fa177820a93bccd31caddd7163d5588085e4e788d517c17674622adce3472ec"
+    },
+    "hints_k3_diff4.jsonl": {
+      "count": 150,
+      "difficulty": 4,
+      "hints_k": 3,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10001,
+      "sha256": "6636d0cccaeb9a4ea1ee099cd6683cfcba5ac22f2873bb370d3684216249ec4d"
+    },
+    "hints_k3_diff5.jsonl": {
+      "count": 150,
+      "difficulty": 5,
+      "hints_k": 3,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10002,
+      "sha256": "520fdf6e791a8196fcc0d34494a565a3223f9523ae2b22e5b6f56f0ebeb1c9f6"
+    },
+    "iso_only_diff1.jsonl": {
+      "count": 150,
+      "difficulty": 1,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 9999,
+      "sha256": "4b72def9c537d50be11a7f65fdcf972c4cd5d017303e45cc67ab02c85af16ace"
+    },
+    "iso_only_diff10.jsonl": {
+      "count": 150,
+      "difficulty": 10,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10008,
+      "sha256": "37e6d6cc679923f202fcdec9c3ce800707d8afd72403f5b9804e01dfef4ebc07"
+    },
+    "iso_only_diff2.jsonl": {
+      "count": 150,
+      "difficulty": 2,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10000,
+      "sha256": "7bff2a992dbb05fd34e681cb72abe931e856b3341998feed174e115c52e6adfa"
+    },
+    "iso_only_diff3.jsonl": {
+      "count": 150,
+      "difficulty": 3,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10001,
+      "sha256": "bd8ea020b7e2b2d8eccbd35aa13d834001787ffdfc5fbcdc49dc51d6148411ed"
+    },
+    "iso_only_diff4.jsonl": {
+      "count": 150,
+      "difficulty": 4,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10002,
+      "sha256": "cbefea5940f180d21be436db812b8d934b5e158b7923defae771c41cc060693b"
+    },
+    "iso_only_diff5.jsonl": {
+      "count": 150,
+      "difficulty": 5,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10003,
+      "sha256": "89b6848b397f59e2da4f232ce6d9ddc52f289a0bf7e08b74a632e580d33b3483"
+    },
+    "iso_only_diff6.jsonl": {
+      "count": 150,
+      "difficulty": 6,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10004,
+      "sha256": "d1e3f7410356dc65f64971f6c9a80d949cfe8a4062f0326057ac888dbdc3f2c4"
+    },
+    "iso_only_diff7.jsonl": {
+      "count": 150,
+      "difficulty": 7,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10005,
+      "sha256": "89bcdfe7e9b386635f62694fe016a1acfb1c8b73ba59cfc82e5e2194e75a4d7a"
+    },
+    "iso_only_diff8.jsonl": {
+      "count": 150,
+      "difficulty": 8,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10006,
+      "sha256": "98b207ed8d1620e9cb406c79c014e257399e945db9a257b10fbece221ec114b2"
+    },
+    "iso_only_diff9.jsonl": {
+      "count": 150,
+      "difficulty": 9,
+      "iso_count": 150,
+      "noniso_count": 0,
+      "seed": 10007,
+      "sha256": "be4862b1a39ff8185b07cbfcf63085c185b3aea65a01227fecae4dd6973619bc"
+    },
+    "mixed_diff1.jsonl": {
+      "count": 300,
+      "difficulty": 1,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10000,
+      "sha256": "d4c75fcf5c3bf847e0a724e661e99cf9ff47e8b59ceec6588f275b40f36b9236"
+    },
+    "mixed_diff10.jsonl": {
+      "count": 300,
+      "difficulty": 10,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10009,
+      "sha256": "ecc296fefafd99fb0d4c43c3a77cea925da1f75c614b5f10bbbafeba9119715a"
+    },
+    "mixed_diff2.jsonl": {
+      "count": 300,
+      "difficulty": 2,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10001,
+      "sha256": "a81c12c15afdd06038f36aee8e6ff56e7b0541ac2e272c77f341cf7ccec21496"
+    },
+    "mixed_diff3.jsonl": {
+      "count": 300,
+      "difficulty": 3,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10002,
+      "sha256": "5ab55b4e721ce8cb431a96a6fb782681e6ffecadeb209eb134fb2d034318396f"
+    },
+    "mixed_diff4.jsonl": {
+      "count": 300,
+      "difficulty": 4,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10003,
+      "sha256": "9c4880f354992c8c2cc3710b3f9ff3800a8d3b0f22e6e0a4309773cb90e9ffe5"
+    },
+    "mixed_diff5.jsonl": {
+      "count": 300,
+      "difficulty": 5,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10004,
+      "sha256": "4cb9e4af96453c66d999015bb7ab5cb58c352887cb871c5bb450065a439941f9"
+    },
+    "mixed_diff6.jsonl": {
+      "count": 300,
+      "difficulty": 6,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10005,
+      "sha256": "e16c133c78886b6823ce607e86438f9391114444370996ecdb7af3514eaad192"
+    },
+    "mixed_diff7.jsonl": {
+      "count": 300,
+      "difficulty": 7,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10006,
+      "sha256": "7bb8a03c4ba7cebff4378bbe2a8396068507734dee2d8e58e24edd084c1b3c44"
+    },
+    "mixed_diff8.jsonl": {
+      "count": 300,
+      "difficulty": 8,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10007,
+      "sha256": "79d870e48fbcfac4a1e78d671d4192d580fd53d38549558ac7d5ee65839ece88"
+    },
+    "mixed_diff9.jsonl": {
+      "count": 300,
+      "difficulty": 9,
+      "iso_count": 150,
+      "noniso_count": 150,
+      "seed": 10008,
+      "sha256": "c5aa9e08f6804f2b212d00945abd5694e4d6519e5ab6e97c5c228bda08cc6029"
+    },
+    "non_iso_easy_diff1.jsonl": {
+      "count": 50,
+      "difficulty": 1,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 9997,
+      "sha256": "a3ae102668fa1b4b0bdbae0ee4947afcad35c2d78cdd2fb9b5cf96a22920a84f"
+    },
+    "non_iso_easy_diff10.jsonl": {
+      "count": 50,
+      "difficulty": 10,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 10006,
+      "sha256": "ba8c7c5477e25256c6b977088d00aea6c9e1a5e89b87ba1c602b02df294babc3"
+    },
+    "non_iso_easy_diff2.jsonl": {
+      "count": 50,
+      "difficulty": 2,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 9998,
+      "sha256": "8a321c4b943a1ee9da7e6610db4c4084ab20adb42db2036c0efc75b1849ef6d1"
+    },
+    "non_iso_easy_diff3.jsonl": {
+      "count": 50,
+      "difficulty": 3,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 9999,
+      "sha256": "f081443f8e41efb4707ab110b945f92ff3ace6cfba62cb1a58bd4eca0150ab0d"
+    },
+    "non_iso_easy_diff4.jsonl": {
+      "count": 50,
+      "difficulty": 4,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 10000,
+      "sha256": "2b044fae6e772feaf0d2e1f67eeea4f86c623b4d60918133eaf11c8eaee74688"
+    },
+    "non_iso_easy_diff5.jsonl": {
+      "count": 50,
+      "difficulty": 5,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 10001,
+      "sha256": "f3242cccf98a2ca01c2f0332eeb3edc80bc381ead85ffa772240828133fa03b8"
+    },
+    "non_iso_easy_diff6.jsonl": {
+      "count": 50,
+      "difficulty": 6,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 10002,
+      "sha256": "a9d6d72cf247fd6e64aa81a2c52add02a3565a082a96baaefb861463141c3d7f"
+    },
+    "non_iso_easy_diff7.jsonl": {
+      "count": 50,
+      "difficulty": 7,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 10003,
+      "sha256": "cd070e7b8783efc96d7c09c8b122ba11edd17db17b301c0245c5df89e926a064"
+    },
+    "non_iso_easy_diff8.jsonl": {
+      "count": 50,
+      "difficulty": 8,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 10004,
+      "sha256": "b4ff14f5f65cb335ae36a7fce25d7eb1ebac0078387a4620f1f0923fbd25903a"
+    },
+    "non_iso_easy_diff9.jsonl": {
+      "count": 50,
+      "difficulty": 9,
+      "iso_count": 0,
+      "non_iso_category": "easy",
+      "noniso_count": 50,
+      "seed": 10005,
+      "sha256": "cb74c3a41ae003156b9c2648dc86c2a9751c28085a14535251dea4468d1d6b42"
+    },
+    "non_iso_hard_diff1.jsonl": {
+      "count": 50,
+      "difficulty": 1,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10197,
+      "sha256": "977250368f5c051a6a9a7d199dccc09c8ba9bff3d284652773fa45edf19457b3"
+    },
+    "non_iso_hard_diff10.jsonl": {
+      "count": 50,
+      "difficulty": 10,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10206,
+      "sha256": "7506468c79ae96b44519d0949629e0661941ccabefb187469a54342cac697b2a"
+    },
+    "non_iso_hard_diff2.jsonl": {
+      "count": 50,
+      "difficulty": 2,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10198,
+      "sha256": "0700a5a729bed6d4efcba8ac6880aaa6b389216c20044585e0084f330d39b27c"
+    },
+    "non_iso_hard_diff3.jsonl": {
+      "count": 50,
+      "difficulty": 3,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10199,
+      "sha256": "2968bf6b93ad2314f85e77b5cbd46c7f59f2fc90d29eb93198626f0f743f9925"
+    },
+    "non_iso_hard_diff4.jsonl": {
+      "count": 50,
+      "difficulty": 4,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10200,
+      "sha256": "fd04a3a84a185ba95222cbf7f56d8adfc5f3f72efb720a088937ffc008e455db"
+    },
+    "non_iso_hard_diff5.jsonl": {
+      "count": 50,
+      "difficulty": 5,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10201,
+      "sha256": "2cf8a5f69c180bc9995194e42d86bf3be921d5b2a53ab9847b4a2e0184300350"
+    },
+    "non_iso_hard_diff6.jsonl": {
+      "count": 50,
+      "difficulty": 6,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10202,
+      "sha256": "3405b6b1b4284cd9cec9c913afe78ca00e97c7fa2c821431e633af8a29101cbd"
+    },
+    "non_iso_hard_diff7.jsonl": {
+      "count": 50,
+      "difficulty": 7,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10203,
+      "sha256": "a31e089625b357a04d54fb1b6d62f4bb0294c4be837596d2e6b7c4f9fa51ccde"
+    },
+    "non_iso_hard_diff8.jsonl": {
+      "count": 50,
+      "difficulty": 8,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10204,
+      "sha256": "cfd98e1fe824edf71ef6e68a6b2735f0481e59d54464690da1a2c22e9f2ebaea"
+    },
+    "non_iso_hard_diff9.jsonl": {
+      "count": 50,
+      "difficulty": 9,
+      "iso_count": 0,
+      "non_iso_category": "hard",
+      "noniso_count": 50,
+      "seed": 10205,
+      "sha256": "acf454172f079c1fc40d4a9534641bbd3627d8ee5f271f84319c3b627a5732a0"
+    },
+    "non_iso_medium_diff1.jsonl": {
+      "count": 50,
+      "difficulty": 1,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10097,
+      "sha256": "fbc1e964204fbf9d825899ade7e1d2b9e6132668a90769413c1bef7d2f802385"
+    },
+    "non_iso_medium_diff10.jsonl": {
+      "count": 50,
+      "difficulty": 10,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10106,
+      "sha256": "0424d902f2743f96b6099ce4dbdf6615776b9a023c6d260046a1cd304df8c7f2"
+    },
+    "non_iso_medium_diff2.jsonl": {
+      "count": 50,
+      "difficulty": 2,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10098,
+      "sha256": "a4275e565105b92ec07e9ff417184a2e0e1501e591b50829a4881cec9f361b5f"
+    },
+    "non_iso_medium_diff3.jsonl": {
+      "count": 50,
+      "difficulty": 3,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10099,
+      "sha256": "58f9b7d8e1c4c1a926413dbc27c94be3cff445bcbc670ecb4265749db044163b"
+    },
+    "non_iso_medium_diff4.jsonl": {
+      "count": 50,
+      "difficulty": 4,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10100,
+      "sha256": "126939cc257977dbb131b645e63206e530b9bb8591de915f0127623306950c56"
+    },
+    "non_iso_medium_diff5.jsonl": {
+      "count": 50,
+      "difficulty": 5,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10101,
+      "sha256": "3bd45c8f657cc5689a6a9bc577009b6b800a1974975b6e2e716b2cbc6ffe35fb"
+    },
+    "non_iso_medium_diff6.jsonl": {
+      "count": 50,
+      "difficulty": 6,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10102,
+      "sha256": "1dea1cfa8a92a4cd17e408e1b951da62b9b82baeeba37141a9aba1ffcde5b880"
+    },
+    "non_iso_medium_diff7.jsonl": {
+      "count": 50,
+      "difficulty": 7,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10103,
+      "sha256": "cb767218037f394b7f4d6de2889a75b99faf7f8827f1961d37313a70c73e6231"
+    },
+    "non_iso_medium_diff8.jsonl": {
+      "count": 50,
+      "difficulty": 8,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10104,
+      "sha256": "ceb45889a634cd1ee4ea8c88ecd1be1bc82ed32fb5bb9a979e23a23417500aa0"
+    },
+    "non_iso_medium_diff9.jsonl": {
+      "count": 50,
+      "difficulty": 9,
+      "iso_count": 0,
+      "non_iso_category": "medium",
+      "noniso_count": 50,
+      "seed": 10105,
+      "sha256": "eb024175317c4ecd2090db63aaf3be1c37b8c9a2a3931afc362ba5bc6c718073"
+    }
+  },
+  "generated_at": "2026-02-24T19:00:39.095663+00:00",
+  "hint_seed": 9997,
+  "iso_only_seed": 9998,
+  "mixed_seed": 9999,
+  "non_iso_seed": 9996,
+  "total": 6450,
+  "total_hints": 450,
+  "total_iso_only": 1500,
+  "total_mixed": 3000,
+  "total_non_iso": 1500
+}

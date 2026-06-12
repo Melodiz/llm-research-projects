@@ -1,0 +1,6 @@
+Predict the result of taking this action in deterministic 8x8 FrozenLake.
+Use zero-indexed (row, col) coordinates from the top-left.
+Visible cracked/dark tiles are holes; safe frozen tiles can be crossed; the goal is the target tile.
+Action: {action_name}
+Answer exactly in this format:
+<prediction>Position: (r, c). Outcome: safe</prediction>

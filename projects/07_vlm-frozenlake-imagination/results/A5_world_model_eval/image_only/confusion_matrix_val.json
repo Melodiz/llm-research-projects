@@ -1,0 +1,30 @@
+{
+  "safe": {
+    "safe": 471,
+    "hole": 2,
+    "goal": 0,
+    "wall": 0,
+    "format_error": 0
+  },
+  "hole": {
+    "safe": 2,
+    "hole": 27,
+    "goal": 0,
+    "wall": 0,
+    "format_error": 0
+  },
+  "goal": {
+    "safe": 0,
+    "hole": 0,
+    "goal": 5,
+    "wall": 0,
+    "format_error": 0
+  },
+  "wall": {
+    "safe": 1,
+    "hole": 0,
+    "goal": 0,
+    "wall": 92,
+    "format_error": 0
+  }
+}

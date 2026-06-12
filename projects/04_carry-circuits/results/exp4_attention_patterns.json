@@ -1,0 +1,22 @@
+{
+  "no_carry": {
+    "a": 123,
+    "b": 456
+  },
+  "carry_ones": {
+    "a": 137,
+    "b": 218
+  },
+  "carry_tens": {
+    "a": 152,
+    "b": 263
+  },
+  "carry_hundreds": {
+    "a": 612,
+    "b": 503
+  },
+  "full_cascade": {
+    "a": 999,
+    "b": 1
+  }
+}

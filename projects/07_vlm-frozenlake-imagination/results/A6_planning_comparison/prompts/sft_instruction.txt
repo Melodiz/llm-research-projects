@@ -1,0 +1,1 @@
+Predict the next position and outcome for this deterministic 8x8 FrozenLake transition. Use zero-indexed (row, col) coordinates. Answer exactly in this format: <prediction>Position: (r, c). Outcome: safe</prediction>

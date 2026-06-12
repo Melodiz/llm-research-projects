@@ -1,0 +1,72 @@
+{
+  "reactive_vlm": {
+    "success_rate": {
+      "low": 0.0,
+      "high": 0.0
+    },
+    "hole_rate": {
+      "low": 0.6333333333333333,
+      "high": 0.9333333333333333
+    },
+    "mean_steps": {
+      "low": 9.4,
+      "high": 38.46666666666667
+    }
+  },
+  "lookahead_zeroshot_vlm": {
+    "success_rate": {
+      "low": 0.0,
+      "high": 0.0
+    },
+    "hole_rate": {
+      "low": 0.6333333333333333,
+      "high": 0.9333333333333333
+    },
+    "mean_steps": {
+      "low": 9.4,
+      "high": 38.46666666666667
+    }
+  },
+  "lookahead_sft_image_text": {
+    "success_rate": {
+      "low": 0.03333333333333333,
+      "high": 0.3
+    },
+    "hole_rate": {
+      "low": 0.13333333333333333,
+      "high": 0.4666666666666667
+    },
+    "mean_steps": {
+      "low": 44.2,
+      "high": 73.76666666666667
+    }
+  },
+  "lookahead_sft_image_only": {
+    "success_rate": {
+      "low": 0.0,
+      "high": 0.23333333333333334
+    },
+    "hole_rate": {
+      "low": 0.6333333333333333,
+      "high": 0.9333333333333333
+    },
+    "mean_steps": {
+      "low": 8.332500000000001,
+      "high": 29.469166666666652
+    }
+  },
+  "lookahead_gt": {
+    "success_rate": {
+      "low": 0.06666666666666667,
+      "high": 0.36666666666666664
+    },
+    "hole_rate": {
+      "low": 0.0,
+      "high": 0.0
+    },
+    "mean_steps": {
+      "low": 68.46666666666667,
+      "high": 94.26666666666667
+    }
+  }
+}

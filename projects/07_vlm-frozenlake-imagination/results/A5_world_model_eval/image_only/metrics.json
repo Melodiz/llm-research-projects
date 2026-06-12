@@ -1,0 +1,148 @@
+{
+  "condition": "image_only",
+  "runtime_seconds": 6195.404800891876,
+  "train": {
+    "count": 2400,
+    "format_compliant": 2400,
+    "format_error_count": 0,
+    "format_compliance_rate": 1.0,
+    "exact_target_match_count": 2398,
+    "exact_target_match_rate": 0.9991666666666666,
+    "position_correct_count": 2400,
+    "position_accuracy": 1.0,
+    "outcome_correct_count": 2398,
+    "outcome_accuracy": 0.9991666666666666,
+    "both_correct_count": 2398,
+    "both_correct_accuracy": 0.9991666666666666,
+    "wrong_position_count": 0,
+    "wrong_outcome_count": 2,
+    "wrong_both_count": 0,
+    "by_policy_source": {
+      "greedy": {
+        "count": 1200,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "random": {
+        "count": 1200,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 0.9983333333333333,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 0.9983333333333333,
+        "both_correct_accuracy": 0.9983333333333333
+      }
+    },
+    "by_target_outcome": {
+      "safe": {
+        "count": 1886,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 0.9994697773064687,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 0.9994697773064687,
+        "both_correct_accuracy": 0.9994697773064687
+      },
+      "hole": {
+        "count": 130,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 0.9923076923076923,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 0.9923076923076923,
+        "both_correct_accuracy": 0.9923076923076923
+      },
+      "goal": {
+        "count": 22,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "wall": {
+        "count": 362,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      }
+    }
+  },
+  "val": {
+    "count": 600,
+    "format_compliant": 600,
+    "format_error_count": 0,
+    "format_compliance_rate": 1.0,
+    "exact_target_match_count": 595,
+    "exact_target_match_rate": 0.9916666666666667,
+    "position_correct_count": 597,
+    "position_accuracy": 0.995,
+    "outcome_correct_count": 595,
+    "outcome_accuracy": 0.9916666666666667,
+    "both_correct_count": 595,
+    "both_correct_accuracy": 0.9916666666666667,
+    "wrong_position_count": 3,
+    "wrong_outcome_count": 5,
+    "wrong_both_count": 3,
+    "by_policy_source": {
+      "greedy": {
+        "count": 300,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "random": {
+        "count": 300,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 0.9833333333333333,
+        "position_accuracy": 0.99,
+        "outcome_accuracy": 0.9833333333333333,
+        "both_correct_accuracy": 0.9833333333333333
+      }
+    },
+    "by_target_outcome": {
+      "safe": {
+        "count": 473,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 0.9957716701902748,
+        "position_accuracy": 0.9978858350951374,
+        "outcome_accuracy": 0.9957716701902748,
+        "both_correct_accuracy": 0.9957716701902748
+      },
+      "hole": {
+        "count": 29,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 0.9310344827586207,
+        "position_accuracy": 0.9655172413793104,
+        "outcome_accuracy": 0.9310344827586207,
+        "both_correct_accuracy": 0.9310344827586207
+      },
+      "goal": {
+        "count": 5,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 1.0,
+        "position_accuracy": 1.0,
+        "outcome_accuracy": 1.0,
+        "both_correct_accuracy": 1.0
+      },
+      "wall": {
+        "count": 93,
+        "format_compliance_rate": 1.0,
+        "exact_target_match_rate": 0.989247311827957,
+        "position_accuracy": 0.989247311827957,
+        "outcome_accuracy": 0.989247311827957,
+        "both_correct_accuracy": 0.989247311827957
+      }
+    }
+  },
+  "train_calibration_threshold": 0.9,
+  "train_calibration_verdict": "converged_enough",
+  "prediction_counts": {
+    "train": 2400,
+    "val": 600
+  }
+}

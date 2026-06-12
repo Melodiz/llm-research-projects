@@ -1,0 +1,222 @@
+{
+  "carry": {
+    "L0H0": {
+      "overflow": {
+        "mode_digit": 6,
+        "frequency": 0.645
+      },
+      "hundreds": {
+        "mode_digit": 6,
+        "frequency": 0.56
+      },
+      "tens": {
+        "mode_digit": 3,
+        "frequency": 0.54
+      },
+      "ones": {
+        "mode_digit": 1,
+        "frequency": 0.47
+      }
+    },
+    "L0H1": {
+      "overflow": {
+        "mode_digit": 0,
+        "frequency": 1.0
+      },
+      "hundreds": {
+        "mode_digit": 0,
+        "frequency": 1.0
+      },
+      "tens": {
+        "mode_digit": 7,
+        "frequency": 0.63
+      },
+      "ones": {
+        "mode_digit": 7,
+        "frequency": 0.37
+      }
+    },
+    "L0H2": {
+      "overflow": {
+        "mode_digit": 5,
+        "frequency": 0.47
+      },
+      "hundreds": {
+        "mode_digit": 8,
+        "frequency": 0.84
+      },
+      "tens": {
+        "mode_digit": 8,
+        "frequency": 0.825
+      },
+      "ones": {
+        "mode_digit": 8,
+        "frequency": 0.785
+      }
+    },
+    "L1H0": {
+      "overflow": {
+        "mode_digit": 6,
+        "frequency": 0.47
+      },
+      "hundreds": {
+        "mode_digit": 6,
+        "frequency": 0.49
+      },
+      "tens": {
+        "mode_digit": 6,
+        "frequency": 0.63
+      },
+      "ones": {
+        "mode_digit": 1,
+        "frequency": 0.685
+      }
+    },
+    "L1H1": {
+      "overflow": {
+        "mode_digit": 3,
+        "frequency": 0.36
+      },
+      "hundreds": {
+        "mode_digit": 6,
+        "frequency": 0.22
+      },
+      "tens": {
+        "mode_digit": 3,
+        "frequency": 0.255
+      },
+      "ones": {
+        "mode_digit": 6,
+        "frequency": 0.27
+      }
+    },
+    "L1H2": {
+      "overflow": {
+        "mode_digit": 0,
+        "frequency": 0.44
+      },
+      "hundreds": {
+        "mode_digit": 0,
+        "frequency": 0.615
+      },
+      "tens": {
+        "mode_digit": 9,
+        "frequency": 0.99
+      },
+      "ones": {
+        "mode_digit": 3,
+        "frequency": 0.64
+      }
+    }
+  },
+  "no_carry": {
+    "L0H0": {
+      "overflow": {
+        "mode_digit": 6,
+        "frequency": 0.64
+      },
+      "hundreds": {
+        "mode_digit": 6,
+        "frequency": 0.545
+      },
+      "tens": {
+        "mode_digit": 3,
+        "frequency": 0.55
+      },
+      "ones": {
+        "mode_digit": 2,
+        "frequency": 0.53
+      }
+    },
+    "L0H1": {
+      "overflow": {
+        "mode_digit": 0,
+        "frequency": 1.0
+      },
+      "hundreds": {
+        "mode_digit": 0,
+        "frequency": 1.0
+      },
+      "tens": {
+        "mode_digit": 7,
+        "frequency": 0.48
+      },
+      "ones": {
+        "mode_digit": 7,
+        "frequency": 0.46
+      }
+    },
+    "L0H2": {
+      "overflow": {
+        "mode_digit": 5,
+        "frequency": 0.475
+      },
+      "hundreds": {
+        "mode_digit": 5,
+        "frequency": 0.97
+      },
+      "tens": {
+        "mode_digit": 5,
+        "frequency": 0.985
+      },
+      "ones": {
+        "mode_digit": 5,
+        "frequency": 0.975
+      }
+    },
+    "L1H0": {
+      "overflow": {
+        "mode_digit": 6,
+        "frequency": 0.475
+      },
+      "hundreds": {
+        "mode_digit": 6,
+        "frequency": 0.495
+      },
+      "tens": {
+        "mode_digit": 6,
+        "frequency": 0.63
+      },
+      "ones": {
+        "mode_digit": 5,
+        "frequency": 0.295
+      }
+    },
+    "L1H1": {
+      "overflow": {
+        "mode_digit": 3,
+        "frequency": 0.36
+      },
+      "hundreds": {
+        "mode_digit": 6,
+        "frequency": 0.22
+      },
+      "tens": {
+        "mode_digit": 3,
+        "frequency": 0.255
+      },
+      "ones": {
+        "mode_digit": 9,
+        "frequency": 0.195
+      }
+    },
+    "L1H2": {
+      "overflow": {
+        "mode_digit": 0,
+        "frequency": 0.445
+      },
+      "hundreds": {
+        "mode_digit": 0,
+        "frequency": 0.64
+      },
+      "tens": {
+        "mode_digit": 0,
+        "frequency": 0.725
+      },
+      "ones": {
+        "mode_digit": 2,
+        "frequency": 0.245
+      }
+    }
+  }
+}

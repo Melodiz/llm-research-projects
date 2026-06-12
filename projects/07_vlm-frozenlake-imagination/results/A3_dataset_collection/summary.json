@@ -1,0 +1,217 @@
+{
+  "num_maps": 100,
+  "train_map_count": 80,
+  "val_map_count": 20,
+  "total_transitions": 3000,
+  "target_range": "about 2000-5000 transitions",
+  "transitions_per_policy_map": 15,
+  "transition_counts_by_split": {
+    "train": 2400,
+    "val": 600
+  },
+  "transition_counts_by_split_and_policy": {
+    "train_greedy": 1200,
+    "train_random": 1200,
+    "val_greedy": 300,
+    "val_random": 300
+  },
+  "outcome_distribution_by_split": {
+    "train_goal": 22,
+    "train_hole": 130,
+    "train_safe": 1886,
+    "train_wall": 362,
+    "val_goal": 5,
+    "val_hole": 29,
+    "val_safe": 473,
+    "val_wall": 93
+  },
+  "label_verification_sample": [
+    {
+      "transition_id": "train_seed0000_greedy_t000",
+      "predicted_next_position": [
+        0,
+        1
+      ],
+      "actual_next_position": [
+        0,
+        1
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        0,
+        1
+      ],
+      "target_parse_outcome": "safe"
+    },
+    {
+      "transition_id": "train_seed0000_greedy_t001",
+      "predicted_next_position": [
+        1,
+        1
+      ],
+      "actual_next_position": [
+        1,
+        1
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        1,
+        1
+      ],
+      "target_parse_outcome": "safe"
+    },
+    {
+      "transition_id": "train_seed0000_greedy_t002",
+      "predicted_next_position": [
+        1,
+        2
+      ],
+      "actual_next_position": [
+        1,
+        2
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        1,
+        2
+      ],
+      "target_parse_outcome": "safe"
+    },
+    {
+      "transition_id": "train_seed0000_greedy_t003",
+      "predicted_next_position": [
+        1,
+        3
+      ],
+      "actual_next_position": [
+        1,
+        3
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        1,
+        3
+      ],
+      "target_parse_outcome": "safe"
+    },
+    {
+      "transition_id": "train_seed0000_greedy_t004",
+      "predicted_next_position": [
+        1,
+        4
+      ],
+      "actual_next_position": [
+        1,
+        4
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        1,
+        4
+      ],
+      "target_parse_outcome": "safe"
+    },
+    {
+      "transition_id": "train_seed0000_random_t000",
+      "predicted_next_position": [
+        0,
+        0
+      ],
+      "actual_next_position": [
+        0,
+        0
+      ],
+      "predicted_outcome": "wall",
+      "actual_outcome": "wall",
+      "target_parse_position": [
+        0,
+        0
+      ],
+      "target_parse_outcome": "wall"
+    },
+    {
+      "transition_id": "train_seed0000_random_t001",
+      "predicted_next_position": [
+        1,
+        0
+      ],
+      "actual_next_position": [
+        1,
+        0
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        1,
+        0
+      ],
+      "target_parse_outcome": "safe"
+    },
+    {
+      "transition_id": "train_seed0000_random_t002",
+      "predicted_next_position": [
+        2,
+        0
+      ],
+      "actual_next_position": [
+        2,
+        0
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        2,
+        0
+      ],
+      "target_parse_outcome": "safe"
+    },
+    {
+      "transition_id": "train_seed0000_random_t003",
+      "predicted_next_position": [
+        2,
+        0
+      ],
+      "actual_next_position": [
+        2,
+        0
+      ],
+      "predicted_outcome": "wall",
+      "actual_outcome": "wall",
+      "target_parse_position": [
+        2,
+        0
+      ],
+      "target_parse_outcome": "wall"
+    },
+    {
+      "transition_id": "train_seed0000_random_t004",
+      "predicted_next_position": [
+        2,
+        1
+      ],
+      "actual_next_position": [
+        2,
+        1
+      ],
+      "predicted_outcome": "safe",
+      "actual_outcome": "safe",
+      "target_parse_position": [
+        2,
+        1
+      ],
+      "target_parse_outcome": "safe"
+    }
+  ],
+  "sample_transition_ids": [
+    "train_seed0000_greedy_t000",
+    "train_seed0000_greedy_t001",
+    "train_seed0000_greedy_t002",
+    "train_seed0000_greedy_t003",
+    "train_seed0000_greedy_t004"
+  ]
+}
