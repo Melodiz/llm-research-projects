@@ -12,8 +12,6 @@ I implement six policy gradient variants (vanilla REINFORCE, average-reward and 
 - RLOO reward decreases monotonically with group size K (Spearman rho = −0.80, 15 seeds per point). K = 2 is best at 468.0 ± 14.3 with 15/15 seeds solved, and K = 4 beats vanilla VPG by +51.7 (p = 0.010, d = 0.82). Under a fixed 1500-episode budget, update frequency matters more than baseline quality.
 - BC has a sharp phase transition in dataset size (mean reward 254.0 at 1,000 expert transitions, a perfect 500.0 at 5,000) and tolerates heavy label noise: reward stays between 481 and 499 with up to 40% of expert actions flipped, then collapses; a sigmoid fit puts the inflection at 46.5% noise.
 
-![](figures/fig10_bc_noise_curve.png)
-
 ## Running
 
 Python 3.10 or newer; everything runs on CPU. From the project root:
@@ -38,5 +36,12 @@ python src/plotting_extra.py
 ## Report
 
 The full write-up is in [report/report.pdf](report/report.pdf): complete method details, a numerical-debugging post-mortem, all statistical tests, and the remaining figures.
+
+![report page 1](report/pages/page-01.png)
+![report page 2](report/pages/page-02.png)
+![report page 3](report/pages/page-03.png)
+![report page 4](report/pages/page-04.png)
+![report page 5](report/pages/page-05.png)
+![report page 6](report/pages/page-06.png)
 
 Originally project 1 in a course sequence on LLM research.

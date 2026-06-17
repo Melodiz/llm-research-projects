@@ -12,8 +12,6 @@ I fine-tune `Qwen/Qwen2.5-VL-3B-Instruct` with LoRA (rank 16) to predict the nex
 - Planning success is low across the board: SFT image + text 16.7% (5/30), image-only 10.0% (3/30), perfect ground-truth dynamics only 20.0% (6/30) (`results/A7_final_assembly/part3_comparison_table.csv`).
 - Zero-shot Qwen fails at the interface: 0.0% success and 0% format compliance; both SFT conditions reach 100% compliance.
 
-![](report/assets/part3_success_rate_wilson_ci.png)
-
 ## Running
 
 Python 3.10 or newer (plot_results.py uses zip(strict=True)). Install with `pip install -r requirements.txt`. Training and evaluation need a GPU (the reported runs used a Colab A100); the LoRA adapters are not committed, so reproducing them means retraining:
@@ -34,5 +32,13 @@ python src/plot_results.py
 ## Report
 
 [report/report.md](report/report.md) is the readable write-up; [report/report.pdf](report/report.pdf) is the same study in ICML 2025 format, adding full per-condition tables, confusion matrices, and planner failure analysis.
+
+![report page 1](report/pages/page-01.png)
+![report page 2](report/pages/page-02.png)
+![report page 3](report/pages/page-03.png)
+![report page 4](report/pages/page-04.png)
+![report page 5](report/pages/page-05.png)
+![report page 6](report/pages/page-06.png)
+![report page 7](report/pages/page-07.png)
 
 Originally project 13 in a course sequence on LLM research.

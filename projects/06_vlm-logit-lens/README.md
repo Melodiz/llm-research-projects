@@ -12,8 +12,6 @@ Five synthetic tasks — color, shape, counting red circles, spatial relations, 
 - Binding looks genuinely compositional: pair accuracy is 0% through L23 and 100% from L24, and P(distractor) stays below 0.01 at every layer.
 - Counting collapses at n≥4: "four" and "five" plateau after L23, layer-28 accuracy is 71%, and all 39 n=4 errors say "three".
 
-![](figures/fig1_emergence_curves.png)
-
 ## Running
 
 Both stages run from the project root:
@@ -29,5 +27,10 @@ Collection writes the CSV to the working directory (CPU or MPS work too, slowly)
 ## Report
 
 [report/report.pdf](report/report.pdf) adds shape and spatial results — late layers actively overwrite "below" — plus bootstrap CIs and limitations.
+
+![report page 1](report/pages/page-01.png)
+![report page 2](report/pages/page-02.png)
+![report page 3](report/pages/page-03.png)
+![report page 4](report/pages/page-04.png)
 
 Originally project 10 in a course sequence on LLM research.

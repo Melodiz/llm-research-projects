@@ -12,8 +12,6 @@ The toy model is `ReLU(W Wᵀ f + b)`: a linear encoder into d dimensions with a
 - In the l0_coeff sweep, EV spans 0.922–0.995 while weighted MMCS stays within 0.926–0.942 (0.9395 at l0_coeff=0.01, seed 42); dead latents reach 0.16 at l0_coeff=1.0 (seed 42).
 - Recovery rises from 0.44 at F_sae=50 to 1.00 at F_sae=400, at the cost of 23.9% dead latents.
 
-![Explained variance vs sparsity coefficient](results/2a_l0_coeff/EV_vs_l0_coeff.png)
-
 ## Running
 
 ```
@@ -26,5 +24,12 @@ Python >= 3.10; CPU is sufficient. The script takes no arguments, regenerates al
 ## Report
 
 [report/report.pdf](report/report.pdf) adds the d=2 polytope visualizations, training dynamics, and the unexplained d=10 difficulty.
+
+![report page 1](report/pages/page-01.png)
+![report page 2](report/pages/page-02.png)
+![report page 3](report/pages/page-03.png)
+![report page 4](report/pages/page-04.png)
+![report page 5](report/pages/page-05.png)
+![report page 6](report/pages/page-06.png)
 
 Originally project 7 in a course sequence on LLM research.

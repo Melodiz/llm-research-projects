@@ -11,8 +11,6 @@ Qwen2.5-1.5B-Instruct, trained with GRPO via TRL and Unsloth (4-bit, LoRA rank 3
 - Base model: across difficulties 1–10, 0% iso accuracy, 100% non-iso accuracy, 33.3% aggregate, i.e. the degenerate floor. Class prediction ratio (CPR, fraction of "NOT ISO" predictions) is 1.0; format compliance 0% (`results/base/metrics_per_difficulty.csv`).
 - Hint run: revealing 3 of 5 node mappings drove CPR to 0.28 at step 103, but gradient norm stayed 0.0 for all 200 steps (`outputs/run_h1_hints/train_metrics.csv`), so the CPR movement was sampling variation with no learning behind it.
 
-![](report/src/figures/cpr_dynamics.png)
-
 ## Running
 
 Python 3.10; CUDA GPU (tested on an RTX 4090, CUDA 12.1).
@@ -37,5 +35,10 @@ Trained adapters and test sets are on HuggingFace: [SFT adapter](https://hugging
 ## Report
 
 [report/report.pdf](report/report.pdf) adds run-by-run training dynamics, adapter weight analysis, and why each escape attempt fails.
+
+![report page 1](report/pages/page-01.png)
+![report page 2](report/pages/page-02.png)
+![report page 3](report/pages/page-03.png)
+![report page 4](report/pages/page-04.png)
 
 Originally project 2 in a course sequence on LLM research.

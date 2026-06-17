@@ -27,4 +27,7 @@ The notebook reproduces all results — roughly 60 min on CPU, ~8 min on a T4 GP
 
 [report/report.pdf](report/report.pdf) adds tables for all probe/baseline comparisons plus the ablation and 40%-injection diagnostics.
 
+![report page 1](report/pages/page-01.png)
+![report page 2](report/pages/page-02.png)
+
 Originally project 9 in a course sequence on LLM research.
